@@ -13,12 +13,12 @@ export default function Nav() {
     return (
       <nav className="bg-white text-black px-6 py-4 flex justify-between items-center">
         <Link href="/">
-        <span className="group px-2 py-0 text-xl font-bold text-green-500 hover:text-green-600 transition-colors">
+        <div className="group px-2 py-0 text-xl font-bold text-green-500 hover:text-green-600 transition-colors duration-300">
           Story Mint
           <span className="ml-1 inline-block group-hover:animate-spin-once transition-transform duration-1000 cursor-pointer">🍃</span>
-        </span>
+        </div>
       </Link>
-        <div className="text-sm text-gray-500">Loading...</div>
+        <div className="w-12 h-12 rounded-full bg-gray-200 animate-pulse"/>
       </nav>
     );
   }
@@ -28,13 +28,10 @@ export default function Nav() {
       <Link href="/">
         <div className="group px-2 py-0 text-xl font-bold text-green-500 hover:text-green-600 transition-colors duration-300 cursor-pointer">
           Story Mint
-          <span className="group">
           <span className="ml-1 inline-block group-hover:animate-spin-once transition-transform  duration-1000 cursor-pointer"> 🍃 
-          </span>
           </span>
         </div>
       </Link>
-
       {!user && (
         <Link href="/auth/login" className="py-2 px-4 text-sm bg-cyan-500 text-white rounded-lg font-medium">
           Join Now
