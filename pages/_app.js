@@ -1,15 +1,19 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import React from 'react';
 import Nav from '../components/Nav';
-import {ToastContainer} from 'react-toastify';
+
+const MemoizedNav = React.memo(Nav);
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <div>
-      <Nav />
+    <>
+      <MemoizedNav />
       <main>
-        <ToastContainer limit={1}/>
         <Component {...pageProps} />
       </main>
-    </div>
+      <ToastContainer limit={1} />
+    </>
   );
 }
